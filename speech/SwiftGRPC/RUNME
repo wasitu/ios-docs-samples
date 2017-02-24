@@ -1,0 +1,8 @@
+#!/bin/sh
+
+echo "Compile the protocol buffers"
+mkdir -p Protos
+mkdir -p Services
+protoc google/api/*.proto google/cloud/speech/v1beta1/*.proto google/longrunning/*.proto google/protobuf/*.proto google/rpc/*.proto -o speech.out --swift_out=./Protos --swiftgrpc_out=./Services
+
+
